@@ -1,0 +1,78 @@
+{
+    "name": "xbigdaddyx/beverly-ratio",
+    "description": "This is ratio principle package for beverly",
+    "keywords": [
+        "xbigdaddyx",
+        "laravel",
+        "beverly-ratio"
+    ],
+    "homepage": "https://github.com/xbigdaddyx/beverly-ratio",
+    "support": {
+        "issues": "https://github.com/xbigdaddyx/beverly-ratio/issues",
+        "source": "https://github.com/xbigdaddyx/beverly-ratio"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xbigdaddyx",
+            "email": "yussupcazzanova97@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-package-tools": "^1.15.0",
+        "wildside/userstamps": "^2.4"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.1",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xbigdaddyx\\BeverlyRatio\\": "src/",
+            "Xbigdaddyx\\BeverlyRatio\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Xbigdaddyx\\BeverlyRatio\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Xbigdaddyx\\BeverlyRatio\\BeverlyRatioServiceProvider"
+            ],
+            "aliases": {
+                "BeverlyRatio": "Xbigdaddyx\\BeverlyRatio\\Facades\\BeverlyRatio"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
